@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D7B58A44281A438C9393788 /* Pods_MyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989720B5D130D2ED8092A2E3 /* Pods_MyLibrary.framework */; };
 		DA008E5620C2F21900982CB2 /* MyLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = DA008E4820C2F21900982CB2 /* MyLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		471C57AABCD7F480193D16F5 /* Pods-MyLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyLibrary/Pods-MyLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		989720B5D130D2ED8092A2E3 /* Pods_MyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE661B531BC01716ACDD24C1 /* Pods-MyLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLibrary/Pods-MyLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		DA008E4620C2F21900982CB2 /* MyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA008E4820C2F21900982CB2 /* MyLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLibrary.h; sourceTree = "<group>"; };
 		DA008E4920C2F21900982CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -21,17 +25,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D7B58A44281A438C9393788 /* Pods_MyLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50B895D6B0970D16502DC121 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE661B531BC01716ACDD24C1 /* Pods-MyLibrary.debug.xcconfig */,
+				471C57AABCD7F480193D16F5 /* Pods-MyLibrary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		866FBAB51DBDA7AA23C2CE6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				989720B5D130D2ED8092A2E3 /* Pods_MyLibrary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA008E1520C2F1E200982CB2 = {
 			isa = PBXGroup;
 			children = (
 				DA008E4720C2F21900982CB2 /* MyLibrary */,
 				DA008E1F20C2F1E200982CB2 /* Products */,
+				50B895D6B0970D16502DC121 /* Pods */,
+				866FBAB51DBDA7AA23C2CE6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +94,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA008E5720C2F21900982CB2 /* Build configuration list for PBXNativeTarget "MyLibrary" */;
 			buildPhases = (
+				5DEF00E1CB38FE083DCFD717 /* [CP] Check Pods Manifest.lock */,
 				DA008E4120C2F21900982CB2 /* Sources */,
 				DA008E4220C2F21900982CB2 /* Frameworks */,
 				DA008E4320C2F21900982CB2 /* Headers */,
@@ -126,6 +151,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5DEF00E1CB38FE083DCFD717 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyLibrary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA008E4120C2F21900982CB2 /* Sources */ = {
@@ -254,6 +300,7 @@
 		};
 		DA008E5820C2F21900982CB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE661B531BC01716ACDD24C1 /* Pods-MyLibrary.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -264,11 +311,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MyLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shotanakagami.MyLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -281,6 +324,7 @@
 		};
 		DA008E5920C2F21900982CB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 471C57AABCD7F480193D16F5 /* Pods-MyLibrary.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -291,11 +335,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MyLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shotanakagami.MyLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
