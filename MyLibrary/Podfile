@@ -1,5 +1,0 @@
-target 'MyLibrary' do
-  use_frameworks!
-
-  pod 'SVProgressHUD'
-end
