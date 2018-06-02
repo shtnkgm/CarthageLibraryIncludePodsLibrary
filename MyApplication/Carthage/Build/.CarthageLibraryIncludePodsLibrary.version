@@ -1,0 +1,9 @@
+{
+  "commitish" : "0.0.1",
+  "iOS" : [
+    {
+      "name" : "MyFramework",
+      "hash" : "b5f86151b50b5f4ef239d5921c9593104d7d6bc0ec4a356c236be0cded55d689"
+    }
+  ]
+}
